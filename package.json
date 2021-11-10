@@ -42,13 +42,16 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "12",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
     "prettier": "2.4.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY-GIT-PARAMS"
     }
   },
   "lint-staged": {
