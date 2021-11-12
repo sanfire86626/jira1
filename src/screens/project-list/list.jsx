@@ -10,7 +10,7 @@ const List = ({ list, users }) => {
       <tbody>
         {list.map((project) => {
           return (
-            <tr>
+            <tr key={project.id}>
               <td>{project.name}</td>
               <td>
                 {users.find((user) => user.id === project.personId)?.name ||
