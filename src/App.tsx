@@ -1,9 +1,9 @@
-import News from "./components/News";
+import ProjectListScreen from "screens/project-list";
+
 const App = () => {
   return (
     <div>
-      <h3>App组件</h3>
-      <News />
+      <ProjectListScreen />
     </div>
   );
 };
