@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-const isFalsy = (value: any) => (value === 0 ? false : !value);
+const isFalsy = (value: unknown) => (value === 0 ? false : !value);
 export const cleanObject = (object: object) => {
   //进行对象深拷贝，这样不会影响传进来的对象本身
   const result = { ...object };
@@ -20,7 +20,7 @@ export const useMount = (callback: () => void) => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
-export const useDebounce = (value: any, delay?: number) => {
+export const useDebounce = <V>(value: V, delay?: number) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
   useEffect(() => {
     const timer = setTimeout(() => setDebouncedValue(value), delay);
